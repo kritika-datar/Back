@@ -1,16 +1,13 @@
 package com.example.demo.dto;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,16 +22,77 @@ public class Question
 	@Column(name = "question")
 	private String question;
 	
-	@ManyToOne
-	@JoinColumn(name = "tid")
-	private Teacher teacher;
+	@Column(name = "optiona")
+	private String optiona;
 	
-	@OneToMany(mappedBy = "reportid",fetch = FetchType.EAGER)
-	private Set<Report> reports;
+	@Column(name = "optionb")
+	private String optionb;
+	
+	@Column(name = "optionc")
+	private String optionc;
+	
+	@Column(name = "optiond")
+	private String optiond;
+	
+	@ManyToOne
+	@JoinColumn(name = "examid")
+	private Exam exam;
+	
+	@OneToOne
+	@JoinColumn(name = "answerid")
+	private Answer answer;
 
 	public Question() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public String getOptiona() {
+		return optiona;
+	}
+
+	public void setOptiona(String optiona) {
+		this.optiona = optiona;
+	}
+
+	public String getOptionb() {
+		return optionb;
+	}
+
+	public void setOptionb(String optionb) {
+		this.optionb = optionb;
+	}
+
+	public String getOptionc() {
+		return optionc;
+	}
+
+	public void setOptionc(String optionc) {
+		this.optionc = optionc;
+	}
+
+	public String getOptiond() {
+		return optiond;
+	}
+
+	public void setOptiond(String optiond) {
+		this.optiond = optiond;
+	}
+
+	public Exam getExam() {
+		return exam;
+	}
+
+	public void setExam(Exam exam) {
+		this.exam = exam;
+	}
+
+	public Answer getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Answer answer) {
+		this.answer = answer;
 	}
 
 	public int getQuestionid() {
@@ -45,27 +103,11 @@ public class Question
 		this.questionid = questionid;
 	}
 
-	public Set<Report> getReports() {
-		return reports;
-	}
-
-	public void setReports(Set<Report> reports) {
-		this.reports = reports;
-	}
-
 	public String getQuestion() {
 		return question;
 	}
 
 	public void setQuestion(String question) {
 		this.question = question;
-	}
-
-	public Teacher getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
 	}
 }

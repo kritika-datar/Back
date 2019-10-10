@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,12 +22,8 @@ public class Answer
 	private String answer;
 	
 	@ManyToOne
-	@JoinColumn(name = "studid")
+	@JoinColumn(name = "studentid")
 	private Student student;
-	
-	@OneToOne
-	@JoinColumn(name = "qid")
-	private Question question;
 
 	public Answer() {
 		super();
@@ -39,11 +34,9 @@ public class Answer
 		return answerid;
 	}
 
-
 	public void setAnswerid(int answerid) {
 		this.answerid = answerid;
 	}
-
 
 	public String getAnswer() {
 		return answer;
@@ -59,13 +52,5 @@ public class Answer
 
 	public void setStudent(Student student) {
 		this.student = student;
-	}
-
-	public Question getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(Question question) {
-		this.question = question;
 	}
 }

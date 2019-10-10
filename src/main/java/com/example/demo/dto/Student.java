@@ -38,13 +38,13 @@ public class Student
 	@Column(name = "course")
 	private String course;
 	
-	@Column(name = "year")
-	private int year;
+	@Column(name = "semester")
+	private int semester;
 	
-	@OneToMany(mappedBy = "answerid", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
 	private Set<Answer> answers;
 	
-	@OneToMany(mappedBy = "reportid",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "student",fetch = FetchType.EAGER)
 	private Set<Report> reports;
 	
 	public Student() {
@@ -123,11 +123,11 @@ public class Student
 		this.course = course;
 	}
 
-	public int getYear() {
-		return year;
+	public int getSemester() {
+		return semester;
 	}
 
-	public void setYear(int year) {
-		this.year = year;
+	public void setSemester(int semester) {
+		this.semester = semester;
 	}
 }

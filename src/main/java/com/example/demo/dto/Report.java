@@ -22,16 +22,24 @@ public class Report
 	private int score;
 	
 	@ManyToOne
-	@JoinColumn(name = "questionid")
-	private Question question;
+	@JoinColumn(name = "examid")
+	private Exam exam;
 	
 	@ManyToOne
-	@JoinColumn(name = "studid")
+	@JoinColumn(name = "studentid")
 	private Student student;
 
 	public Report() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Exam getExam() {
+		return exam;
+	}
+
+	public void setExam(Exam exam) {
+		this.exam = exam;
 	}
 
 	public int getReportid() {
@@ -48,14 +56,6 @@ public class Report
 
 	public void setScore(int score) {
 		this.score = score;
-	}
-
-	public Question getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(Question question) {
-		this.question = question;
 	}
 
 	public Student getStudent() {

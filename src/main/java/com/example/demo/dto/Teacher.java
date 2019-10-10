@@ -35,20 +35,20 @@ public class Teacher
 	@Column(name = "password")
 	private String password;
 	
-	@OneToMany(mappedBy = "questionid", fetch = FetchType.EAGER)
-	private Set<Question> questions;
+	@OneToMany(mappedBy = "teacher", fetch = FetchType.EAGER)
+	private Set<Exam> exams;
 
 	public Teacher() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Set<Question> getQuestions() {
-		return questions;
+	
+	public Set<Exam> getExams() {
+		return exams;
 	}
 
-	public void setQuestions(Set<Question> questions) {
-		this.questions = questions;
+	public void setExams(Set<Exam> exams) {
+		this.exams = exams;
 	}
 
 	public int getTeacherid() {
