@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.Exam;
+import com.example.demo.dto.Student;
 
 @Service
 public class ExamService
@@ -29,6 +30,22 @@ public class ExamService
 		}
 		
 		return b;
+	}
+	
+	public List<Exam> showExamsForStudent(Student ref)
+	{
+		List<Exam> lst = null;
+		
+		try 
+		{
+			examRepository.findById(ref.getStudentid());
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return lst;
 	}
 	
 	public List<Exam> showAllExams()

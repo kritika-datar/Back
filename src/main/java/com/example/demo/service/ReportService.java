@@ -19,7 +19,7 @@ public class ReportService
 		
 		try 
 		{
-			lst = repository.findReportById(studid);
+//			lst = repository.findReportById(studid);
 		} 
 		catch (Exception e) 
 		{
@@ -36,7 +36,7 @@ public class ReportService
 		
 		try 
 		{
-			lst = repository.findReportByQuestionId(questionid);
+//			lst = repository.findReportByQuestionId(questionid);
 		} 
 		catch (Exception e) 
 		{
@@ -53,7 +53,7 @@ public class ReportService
 		
 		try 
 		{
-			lst = repository.findAllReports();
+//			lst = repository.findAllReports();
 		} 
 		catch (Exception e) 
 		{

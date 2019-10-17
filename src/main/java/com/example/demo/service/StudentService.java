@@ -46,13 +46,13 @@ public class StudentService
 		
 		try 
 		{
-			Student stud = repository.findStudentByUsernameAndPassword(ref.getStudusername(), ref.getStudpassword());
-			if(stud!=null)
-			{
-				int n = repository.updateStudentPassword(ref.getStudusername(), newpass);
-				if(n>0)
-					b = true;
-			}
+//			Student stud = repository.findStudentByUsernameAndPassword(ref.getStudusername(), ref.getStudpassword());
+//			if(stud!=null)
+//			{
+//				int n = repository.updateStudentPassword(ref.getStudusername(), newpass);
+//				if(n>0)
+//					b = true;
+//			}
 		} 
 		catch (Exception e) 
 		{

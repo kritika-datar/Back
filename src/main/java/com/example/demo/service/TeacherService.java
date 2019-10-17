@@ -46,19 +46,26 @@ public class TeacherService
 		
 		try 
 		{
-			Teacher teach = repository.findTeacherByUsernameAndPassword(ref.getUsername(), ref.getPassword());
-			if(teach!=null)
-			{
-				int n = repository.updateTeacherPassword(ref.getPassword(), newpass);
-				if(n>0)
-					b = true;
-			}
+//			Teacher teach = repository.findTeacherByUsernameAndPassword(ref.getUsername(), ref.getPassword());
+//			if(teach!=null)
+//			{
+//				int n = repository.updateTeacherPassword(ref.getPassword(), newpass);
+//				if(n>0)
+//					b = true;
+//			}
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 			return false;
 		}
+		
+		return b;
+	}
+	
+	public boolean uploadQuestions()
+	{
+		boolean b = false;
 		
 		return b;
 	}

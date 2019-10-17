@@ -37,7 +37,7 @@ public class AnswerService
 		
 		try 
 		{
-			lst = repository.findAllAnswersByStudents(rollno);
+//			lst = repository.findAllAnswersByStudents(rollno);
 		} 
 		catch (Exception e) 
 		{
@@ -54,7 +54,7 @@ public class AnswerService
 		
 		try
 		{
-			lst = repository.findAllAnswers();
+//			lst = repository.findAllAnswers();
 		}
 		catch (Exception e) 
 		{

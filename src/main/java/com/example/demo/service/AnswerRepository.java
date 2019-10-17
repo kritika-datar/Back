@@ -9,10 +9,10 @@ import com.example.demo.dto.Answer;
 
 public interface AnswerRepository extends CrudRepository<Answer, Integer> 
 {
-	@Query("select A from Answer A Right Outer join A.quest Q where Q.rollno = ?1")
-	List<Answer> findAllAnswersByStudents(String rollno);
+	//@Query("select A from Answer A Right Outer join A.quest Q where Q.rollno = ?1")
+//	List<Answer> findAllAnswersByStudents(String rollno);
 	
-	@Query("select A from Answer A")
-	List<Object[]> findAllAnswers();
+//	@Query("select A from Answer A")
+//	List<Object[]> findAllAnswers();
 
 }
