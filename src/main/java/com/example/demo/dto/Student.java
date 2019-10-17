@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,13 +30,7 @@ public class Student
 
 	@Column(name = "studname")
 	private String studname;
-	
-	@Column(name = "studusername")
-	private String studusername;
-	
-	@Column(name = "studpassword")
-	private String studpassword;
-	
+		
 	@Column(name = "course")
 	private String course;
 	
@@ -46,6 +42,10 @@ public class Student
 	
 	@OneToMany(mappedBy = "student",fetch = FetchType.EAGER)
 	private Set<Report> reports;
+	
+	@ManyToOne
+	@JoinColumn(name = "loginid")
+	private Login login;
 	
 	public Student() {
 		super();
@@ -99,22 +99,6 @@ public class Student
 		this.studname = studname;
 	}
 
-	public String getStudusername() {
-		return studusername;
-	}
-
-	public void setStudusername(String studusername) {
-		this.studusername = studusername;
-	}
-
-	public String getStudpassword() {
-		return studpassword;
-	}
-
-	public void setStudpassword(String studpassword) {
-		this.studpassword = studpassword;
-	}
-
 	public String getCourse() {
 		return course;
 	}
@@ -129,5 +113,13 @@ public class Student
 
 	public void setSemester(int semester) {
 		this.semester = semester;
+	}
+
+	public Login getLogin() {
+		return login;
+	}
+
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 }

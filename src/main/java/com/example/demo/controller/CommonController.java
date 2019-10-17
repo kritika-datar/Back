@@ -11,5 +11,17 @@ public class CommonController
 	{
 		return "index";
 	}
+	
+	@RequestMapping(value = "/index")
+	public String index()
+	{
+		return "index";
+	}
+	
+	@RequestMapping(value = "/login")
+	public String login()
+	{
+		
+	}
 
 }

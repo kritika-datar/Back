@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,14 +31,12 @@ public class Teacher
 	@Column(name = "subject")
 	private String subject;
 	
-	@Column(name = "username")
-	private String username;
-	
-	@Column(name = "password")
-	private String password;
-	
 	@OneToMany(mappedBy = "teacher", fetch = FetchType.EAGER)
 	private Set<Exam> exams;
+	
+	@ManyToOne
+	@JoinColumn(name = "loginid")
+	private Login login;
 
 	public Teacher() {
 		super();
@@ -83,19 +83,11 @@ public class Teacher
 		this.subject = subject;
 	}
 
-	public String getUsername() {
-		return username;
+	public Login getLogin() {
+		return login;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 }

@@ -244,7 +244,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<!-- logo -->
-				<a href="index.jsp" class="navbar-brand">
+				<a href="index" class="navbar-brand">
 					<img class="img-responsive" alt="" src="<c:url value="/resources/images/logo.png"/>" height="80px" width="80px">
 				</a>
 				<!-- header end -->
@@ -280,7 +280,7 @@
           					<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 					            <div class="box-panel">
 					            	<h2 class="search-title" align="center">Login Here!!!</h2><br>
-					            	<form action="index_student.jsp" autocomplete="off" method="post" name="adminlogin">
+					            	<form action="login" autocomplete="off" method="post" name="adminlogin">
 					                <div class="form-group">
                   							<label>Email</label>
                   							<input type="text" placeholder="Enter your email" name="id" class="form-control" required>
