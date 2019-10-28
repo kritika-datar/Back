@@ -13,21 +13,28 @@ public class LoginService {
 	@Autowired
 	private LoginRepository repository;
 	
-	public boolean validateUser(Login ref)
+	public Login validateUser(String username, String password)
 	{
-		boolean b = false;
+//		boolean b = true;
+		
+		Login log = null;
 		
 		try 
 		{
-			Optional<Login> opt = repository.findById(ref.getUsername());
+			Optional<Login> opt = repository.findByUsernameAndPassword(username, password);
 			
+			if(opt.isPresent())
+			{
+				log = opt.get();
+				return log;
+			}
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
 		
-		return b;
+		return log;
 	}
 
 }

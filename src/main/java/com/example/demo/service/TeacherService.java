@@ -24,11 +24,11 @@ public class TeacherService
 			if(opt.isPresent())
 			{
 				Teacher teach = opt.get();
-				if(teach.getUsername().equals(ref.getUsername()))
-				{
-					if(teach.getPassword().equals(ref.getPassword()))
-						b = true;
-				}
+//				if(teach.getUsername().equals(ref.getUsername()))
+//				{
+//					if(teach.getPassword().equals(ref.getPassword()))
+//						b = true;
+//				}
 			}
 		} 
 		catch (Exception e) 

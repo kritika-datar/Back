@@ -283,7 +283,7 @@
 					            	<form action="login" autocomplete="off" method="post" name="adminlogin">
 					                <div class="form-group">
                   							<label>Email</label>
-                  							<input type="text" placeholder="Enter your email" name="id" class="form-control" required>
+                  							<input type="text" placeholder="Enter your email" name="username" class="form-control" required>
     								</div>
                 					<div class="form-group">
                   						<label>Password</label>

@@ -24,11 +24,11 @@ public class StudentService
 			if(opt.isPresent())
 			{
 				Student stud = opt.get();
-				if(stud.getStudusername().equals(ref.getStudusername()))
-				{
-					if(stud.getStudpassword().equals(ref.getStudpassword()))
-						b = true;
-				}
+//				if(stud.getStudusername().equals(ref.getStudusername()))
+//				{
+//					if(stud.getStudpassword().equals(ref.getStudpassword()))
+//						b = true;
+//				}
 			}
 		} 
 		catch (Exception e) 

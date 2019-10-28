@@ -18,10 +18,16 @@ public class CommonController
 		return "index";
 	}
 	
-	@RequestMapping(value = "/login")
-	public String login()
+	@RequestMapping(value = "/logout")
+	public String logoutCust()
 	{
-		
+		return "logout"; 
 	}
+	
+//	@RequestMapping(value = "/login")
+//	public String login()
+//	{
+//		
+//	}
 
 }

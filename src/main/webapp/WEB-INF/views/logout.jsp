@@ -19,7 +19,7 @@
         out.println("});");
         out.println("</script>");
 %>
-<jsp:include page="/index.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/index.jsp"></jsp:include>
 
     </body>
 </html>
