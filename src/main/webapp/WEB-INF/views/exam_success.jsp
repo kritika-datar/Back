@@ -12,4 +12,4 @@ out.println("swal ( 'Message From Server' ,  'Question Posted Successfully !!!' 
 out.println("});");
 out.println("</script>");
 %>
-<jsp:include page="index_teacher.jsp"></jsp:include>
+<jsp:include page="index_teacher"></jsp:include>

@@ -35,10 +35,17 @@ public class ExamController
 		exam.setQdoc(ref.getQdoc());
 		
 		if(examService.saveExam(exam))
-			return "question_success";
+			return "exam_success";
 		else
-			return "question_failure";
+			return "exam_failure";
 	}
+	
+	@RequestMapping(value = "/upload_exam")
+	public String upload_ques()
+	{
+		return "upload_exam";
+	}
+	
 	
 //	public String viewExam(Student ref, HttpServletRequest request)
 //	{

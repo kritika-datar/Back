@@ -11,4 +11,4 @@ out.println("swal ( 'Message From Server' ,  'Question posting failed !!!' ,"
 out.println("});");
 out.println("</script>");
 %>
-<jsp:include page="index_teacher.jsp"></jsp:include>
+<jsp:include page="index_teacher"></jsp:include>

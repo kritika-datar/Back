@@ -16,7 +16,7 @@ public class TeacherController
 	@Autowired
 	private TeacherService service;
 	
-	@RequestMapping(value="loginTeacher")
+	@RequestMapping(value="/loginTeacher")
 	public String loginTeacher(Teacher ref, HttpServletRequest httpServletRequest)
 	{
 		HttpSession hs = httpServletRequest.getSession(true);
@@ -26,7 +26,5 @@ public class TeacherController
 		else
 			return "login_failure";
 	}
-	
-	
 
 }

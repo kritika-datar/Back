@@ -23,14 +23,14 @@ public class LoginController
 	{
 		HttpSession hs = request.getSession(true);
 		
-//		System.out.println(loginService.validateUser(username,password));
-		if(loginService.validateUser(username,password).getType()=="teacher")
+		System.out.println(loginService.validateUser(username,password).getType());
+		if(loginService.validateUser(username,password).getType().equals("teacher"))
 		{
 //			System.out.println(loginService.validateUser(ref));
 			hs.setAttribute("username", username);
 			return "index_teacher";
 		}
-		else if(loginService.validateUser(username,password).getType()=="student")
+		else if(loginService.validateUser(username,password).getType().equals("student"))
 		{
 			hs.setAttribute("username", username);
 			return "index_student";

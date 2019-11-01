@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-4">
                         <ul class="top-nav nav-left">
-                            <li><a href="index_student.jsp">Home</a>
+                            <li><a href="index_student">Home</a>
                             </li>
                             <!--li class="hidden-xs"><a href="blog.jsp">Blog</a>
                             </li//-->
@@ -92,9 +92,9 @@
                                 </a>
                                 <ul class="dropdown-menu ">
                                     <!--li><a href="profile.jsp"><i class=" icon-bargraph"></i> Dashboard</a></li//-->
-                                    <li><a href="profile_setting_student.jsp"><i class=" icon-gears"></i> Profile Setting</a></li>
+                                    <li><a href="profile_setting_student"><i class=" icon-gears"></i> Profile Setting</a></li>
                                     <!--li><a href="question-list.jsp"><i class="icon-heart"></i> Questions</a></li-->
-                                    <li><a href="logout.jsp"><i class="icon-lock"></i> Logout</a></li>
+                                    <li><a href="logout"><i class="icon-lock"></i> Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -128,7 +128,7 @@
                         <li class="dropdown"> <a class="dropdown-toggle " data-hover="dropdown" data-toggle="dropdown" data-animations="fadeInUp">Pages <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 
-                                <li><a href="404.jsp">Error Page</a>
+                                <li><a href="404">Error Page</a>
                                 </li>
                                 
                             </ul>
@@ -181,17 +181,17 @@
                                 <div class="tab-content">
                                      <div id="tab1" class="tab-pane active">
                                         <!-- Question Listing -->
-                                        <jsp:include page="tests_not_taken.jsp"/>
+                                        <jsp:include page="tests_not_taken"/>
                                         <!-- Question Listing End -->
                                     </div>
                                     <div id="tab2" class="tab-pane">
                                         <!-- Question Listing -->
-                                        <jsp:include page="report_card.jsp"/> 
+                                        <jsp:include page="report_card"/> 
                                     </div>
                                         <!-- Question Listing End -->
                                    <div id="tab3" class="tab-pane">
                                         <!-- Question Listing -->
-                                        <jsp:include page="404.jsp"/> 
+                                        <jsp:include page="404"/> 
                                     </div>
                                     </div>
                                     

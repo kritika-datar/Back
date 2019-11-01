@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-4">
                         <ul class="top-nav nav-left">
-                            <li><a href="index_teacher.jsp">Home</a>
+                            <li><a href="index_teacher">Home</a>
                             </li>
                             <!--li class="hidden-xs"><a href="blog.jsp">Blog</a>
                             </li//-->
@@ -92,9 +92,9 @@
                                 </a>
                                 <ul class="dropdown-menu ">
                                     <!--li><a href="profile.jsp"><i class=" icon-bargraph"></i> Dashboard</a></li//-->
-                                    <li><a href="profile_setting_teacher.jsp"><i class=" icon-gears"></i> Profile Settings</a></li>
+                                    <li><a href="profile_setting_teacher"><i class=" icon-gears"></i> Profile Settings</a></li>
                                     <!--li><a href="question-list.jsp"><i class="icon-heart"></i> Questions</a></li-->
-                                    <li><a href="logout.jsp"><i class="icon-lock"></i> Logout</a></li>
+                                    <li><a href="logout"><i class="icon-lock"></i> Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -128,13 +128,13 @@
                         <li class="dropdown"> <a class="dropdown-toggle " data-hover="dropdown" data-toggle="dropdown" data-animations="fadeInUp">Pages <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 
-                                <li><a href="/404.jsp">Error Page</a>
+                                <li><a href="404">Error Page</a>
                                 </li>
                                 
                             </ul>
                         </li>
                         <li>
-                            <div class="btn-nav"><a href="upload_ques.jsp" class="btn btn-primary btn-small navbar-btn">Create a Mock Test</a>
+                            <div class="btn-nav"><a href="upload_exam" class="btn btn-primary btn-small navbar-btn">Create a Mock Test</a>
                             </div>
                         </li>
                     </ul>
@@ -181,17 +181,17 @@
                                 <div class="tab-content">
                                 	<div id="tab1" class="tab-pane active">
                                         <!-- Question Listing -->
-                                        <jsp:include page="mock_tests.jsp"/>
+                                        <jsp:include page="mock_tests"/>
                                         <!-- Question Listing End -->
                                     </div>
                                      <div id="tab2" class="tab-pane">
                                         <!-- Question Listing -->
-                                        <jsp:include page="marks_report.jsp"/> 
+                                        <jsp:include page="marks_report"/> 
                                     </div>
                                         <!-- Question Listing End -->
                                    <div id="tab3" class="tab-pane">
                                         <!-- Question Listing -->
-                                        <jsp:include page="mock_tests.jsp"/> 
+                                        <jsp:include page="mock_tests"/> 
                                     </div>
                                     </div>
                                     

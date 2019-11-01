@@ -1,7 +1,11 @@
 <%-- <%@page import="org.springframework.context.support.ClassPathXmlApplicationContext"%>
 <%@page import="org.springframework.context.ApplicationContext"%>
 <%@page import="com.dto.QuestionCategory"%>
- --%><%@page import="java.util.List" %>
+ --%><%@page import="org.springframework.beans.factory.annotation.Autowired"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.example.demo.dto.Course"%>
+<%@page import="com.example.demo.service.CourseService"%>
+<%@page import="java.util.List" %>
 <%-- <%@page import="com.dao.QuestionCategoryDAO"%>
  --%><%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -106,7 +110,7 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-4">
 				<ul class="top-nav nav-left">
-					<li><a href="index_teacher.jsp">Home</a>
+					<li><a href="index_teacher">Home</a>
 					</li>
 					<!--li class="hidden-xs"><a href="blog.jsp">Blog</a//-->
 					</li>
@@ -134,9 +138,9 @@
 						</a>
 						<ul class="dropdown-menu ">
 							<!--li><a href="profile.jsp"><i class=" icon-bargraph"></i> Dashboard</a></li//-->
-							<li><a href="profile_setting_teacher.jsp"><i class=" icon-gears"></i> Profile Setting</a></li>
+							<li><a href="profile_setting_teacher"><i class=" icon-gears"></i> Profile Setting</a></li>
 							<!--li><a href="question-list.jsp"><i class="icon-heart"></i> Questions</a></li-->
-							<li><a href="logout.jsp"><i class="icon-lock"></i> Logout</a></li>
+							<li><a href="logout"><i class="icon-lock"></i> Logout</a></li>
 						</ul>
 					 </li>
 				</ul>
@@ -183,7 +187,7 @@
               </li>
               <li><a href="blog-detial.jsp">Blog Single</a>
               </li//-->
-              <li><a href="404.jsp">Error Page</a>
+              <li><a href="404">Error Page</a>
 							</li>
               <!--li><a href="contact.jsp">Contact Us</a>
               </li-->
@@ -192,7 +196,7 @@
             </ul>
           </li>
           <li>
-            <div class="btn-nav"><a href="upload_ques.jsp" class="btn btn-primary btn-small navbar-btn">Create a Mock Test</a>
+            <div class="btn-nav"><a href="upload_exam" class="btn btn-primary btn-small navbar-btn">Create a Mock Test</a>
             </div>
           </li>
         </ul>
@@ -217,7 +221,7 @@
               <h2>Create your Test</h2>
               <hr>
               <!-- form login -->
-              <form class="margin-top-40" action="question_success.jsp" method="post">
+              <form class="margin-top-40" action="addExam" method="post">
                 <div class="form-group">
                   <label>Exam Title</label>
                   <input type="text" placeholder="Question Title" class="form-control" name="questionTitle" required>
@@ -226,26 +230,25 @@
                   <label>Course</label>
                   <select required id="qcat" class="questions-category form-control" name="categoryID">
                       <option value="0">Select Course</option>
-                      <%
-/* ApplicationContext context = 
-new ClassPathXmlApplicationContext("spring.xml");
-                      
-QuestionCategoryDAO qd = (QuestionCategoryDAO)
-context.getBean("qcatdao");
-
-List<QuestionCategory> lst = qd.getAllQuestionCategories();
+<%--                       <%
+//                      		@Autowired
+ 							CourseService courseService = new CourseService();
+                      		
+                      		//courseService = null;
+                      		
+							List<Course> lst = courseService.getAllCourses();
                             
                             if(lst != null)
                             {
-                                for(QuestionCategory obj : lst)
+                                for(Course obj : lst)
                                 {
- */                      %>    
-<%--                       <option value="<%=obj.getId()%>"><%=obj.getCategoryName()%></option>
- --%>                      <%
-/*                                 }
+                       %>    
+                       <option value="<%=obj.getCourseid() %>"><%=obj.getCoursename()  %></option>
+                       <%
+                                 }
                             }
- */                      %>    
-                  </select>
+                       %>    
+ --%>                  </select>
                 </div>
                 <div class="form-group">
                   <label>Semester</label>
