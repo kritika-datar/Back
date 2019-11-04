@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import java.io.File;
+import java.sql.Blob;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -13,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "exam")
@@ -27,23 +31,24 @@ public class Exam
 	private String title;
 	
 	@Column(name = "course")
-	private String course;
+	private int course;
 	
 	@Column(name = "semester")
 	private String semester;
 	
 	@Column(name = "qdoc")
-	private File qdoc;
+	private Blob qdoc;
 
 	@OneToMany(mappedBy = "exam", fetch = FetchType.EAGER)
 	private Set<Report> reports;
 	
-	@OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "exam", fetch = FetchType.EAGER)
 	private Set<Question> questions;
-	
+		
+	@Cascade(CascadeType.ALL)
 	@ManyToOne
-	@JoinColumn(name = "teacherid")
-	private Teacher teacher;
+	@JoinColumn(name = "username")
+	private Login login;
 	
 	public Exam() {
 		super();
@@ -65,12 +70,12 @@ public class Exam
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getCourse() {
+	
+	public int getCourse() {
 		return course;
 	}
 
-	public void setCourse(String course) {
+	public void setCourse(int course) {
 		this.course = course;
 	}
 
@@ -81,12 +86,12 @@ public class Exam
 	public void setSemester(String semester) {
 		this.semester = semester;
 	}
-
-	public File getQdoc() {
+	
+	public Blob getQdoc() {
 		return qdoc;
 	}
 
-	public void setQdoc(File qdoc) {
+	public void setQdoc(Blob qdoc) {
 		this.qdoc = qdoc;
 	}
 
@@ -106,11 +111,11 @@ public class Exam
 		this.questions = questions;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
+	public Login getLogin() {
+		return login;
 	}
 
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 }

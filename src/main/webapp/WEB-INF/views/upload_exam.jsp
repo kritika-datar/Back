@@ -129,8 +129,8 @@
 							<img class="img-circle resize" alt="" src="<c:url value="/resources/images/authors/13.png"/>">
 							<span style="text-transform: lowercase" class="hidden-xs small-padding">
                                                             <%
-                                                                    String name=(String)session.getAttribute("userid");
-                                                                    out.print(name);
+                                                                    String username=(String)session.getAttribute("username");
+                                                                    out.print(username);
                                                                     
                                                                     %>
 							 <i class="fa fa-caret-down"></i>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="form-group">
                   <label>Course</label>
-                  <select required id="qcat" class="questions-category form-control" name="categoryID">
+                  <select id="qcat" class="questions-category form-control" name="categoryID">
                       <option value="0">Select Course</option>
 <%--                       <%
 //                      		@Autowired
@@ -252,13 +252,25 @@
                 </div>
                 <div class="form-group">
                   <label>Semester</label>
-                  <select class="questions-category form-control" name="subCategoryID" id="subcat">
+                  <select required class="questions-category form-control" name="subCategoryID" id="subcat">
                     <option value="0">Select Semester</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>
                   </select>
                 </div>
                 <div class="form-group">
     				<label for="exampleFormControlFile1">Test Document</label>
-    				<input type="file" class="form-control-file" id="exampleFormControlFile1">
+    				<input required type="file" class="form-control-file" id="exampleFormControlFile1">
   				</div>  
 <!--                 <div class="form-group">
                   <label>Upload Test Document</label>

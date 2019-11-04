@@ -6,9 +6,9 @@
 <%
 out.println("<script>");
 out.println("$(document).ready(function(){");
-out.println("swal ( 'Message From Server' ,  'Question posting failed !!!' ,"
+out.println("swal ( 'Message From Server' ,  'Exam posting failed !!!' ,"
         + "  'warning' );");
 out.println("});");
 out.println("</script>");
 %>
-<jsp:include page="index_teacher"></jsp:include>
+<jsp:include page="/WEB-INF/views/upload_exam.jsp"></jsp:include>

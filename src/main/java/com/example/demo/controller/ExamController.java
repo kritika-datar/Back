@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dto.Exam;
+import com.example.demo.dto.Login;
 import com.example.demo.dto.Student;
 import com.example.demo.dto.Teacher;
 import com.example.demo.service.ExamService;
@@ -23,16 +24,16 @@ public class ExamController
 	{
 		HttpSession httpSession = request.getSession();
 		
-		int tid = (Integer)httpSession.getAttribute("teacherid");
-		Teacher teach = new Teacher();
-		teach.setTeacherid(tid);
+		String str = (String) httpSession.getAttribute("username");
+		Login log = new Login();
+		log.setUsername(str);
 		
 		Exam exam = new Exam();
-		exam.setTeacher(teach);
+		exam.setTitle(ref.getTitle());
 		exam.setCourse(ref.getCourse());
 		exam.setSemester(ref.getSemester());
-		exam.setTitle(ref.getTitle());
 		exam.setQdoc(ref.getQdoc());
+		exam.setLogin(log);
 		
 		if(examService.saveExam(exam))
 			return "exam_success";

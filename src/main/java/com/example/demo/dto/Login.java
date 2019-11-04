@@ -11,20 +11,19 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 @Table(name = "login")
 public class Login 
-{
+{	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "loginid")
-	private int loginid;
+	@Column(name = "username")
+	private String username;
 	
 	@Column(name = "type")
 	private String type;
-	
-	@Column(name = "username")
-	private String username;
 	
 	@Column(name = "password")
 	private String password;
@@ -34,18 +33,13 @@ public class Login
 	
 	@OneToMany(mappedBy = "login", fetch = FetchType.EAGER)
 	private Set<Teacher> teachers;
+	
+	@OneToMany(mappedBy = "login", fetch = FetchType.EAGER)
+	private Set<Exam> exams;
 
 	public Login() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public int getLoginid() {
-		return loginid;
-	}
-
-	public void setLoginid(int loginid) {
-		this.loginid = loginid;
 	}
 
 	public String getType() {
@@ -86,5 +80,13 @@ public class Login
 
 	public void setTeachers(Set<Teacher> teachers) {
 		this.teachers = teachers;
+	}
+
+	public Set<Exam> getExams() {
+		return exams;
+	}
+
+	public void setExams(Set<Exam> exams) {
+		this.exams = exams;
 	}
 }

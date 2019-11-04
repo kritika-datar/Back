@@ -22,7 +22,10 @@ public class TeacherController
 		HttpSession hs = httpServletRequest.getSession(true);
 		
 		if(service.validateTeacher(ref))
+		{
+//			hs.setAttribute("t);
 			return "index_teacher";
+		}
 		else
 			return "login_failure";
 	}

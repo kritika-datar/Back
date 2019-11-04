@@ -84,7 +84,7 @@
                                     <img class="img-circle resize" alt="" src="resources/images/authors/13.png">
                                     <span style="text-transform: lowercase" class="hidden-xs small-padding">
                                          <%
-                                                                    String name=(String)session.getAttribute("userid");
+                                                                    String name=(String)session.getAttribute("username");
                                                                     out.print(name);
                                                                %>
                                         <i class="fa fa-caret-down"></i>

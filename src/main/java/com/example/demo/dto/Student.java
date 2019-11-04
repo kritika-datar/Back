@@ -44,7 +44,7 @@ public class Student
 	private Set<Report> reports;
 	
 	@ManyToOne
-	@JoinColumn(name = "loginid")
+	@JoinColumn(name = "username")
 	private Login login;
 	
 	public Student() {

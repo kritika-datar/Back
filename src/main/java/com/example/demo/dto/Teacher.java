@@ -31,24 +31,13 @@ public class Teacher
 	@Column(name = "subject")
 	private String subject;
 	
-	@OneToMany(mappedBy = "teacher", fetch = FetchType.EAGER)
-	private Set<Exam> exams;
-	
 	@ManyToOne
-	@JoinColumn(name = "loginid")
+	@JoinColumn(name = "username")
 	private Login login;
 
 	public Teacher() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	
-	public Set<Exam> getExams() {
-		return exams;
-	}
-
-	public void setExams(Set<Exam> exams) {
-		this.exams = exams;
 	}
 
 	public int getTeacherid() {
